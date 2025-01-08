@@ -21,7 +21,7 @@ function App() {
     <MDXProvider components={components}>
       <Router basename={import.meta.env.PROD ? '/secondbrain' : '/'}>
         <div className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold mb-8">SecondBrain</h1>
+          <h1 className="text-3xl font-bold mb-8">Second Brain</h1>
           <Routes>
             <Route path="/" element={<Overview />} />
             <Route path="/:filename" element={<Details />} />
