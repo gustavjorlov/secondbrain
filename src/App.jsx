@@ -14,6 +14,7 @@ const components = {
   ul: props => <ul className="list-disc list-inside mb-4" {...props} />,
   ol: props => <ol className="list-decimal list-inside mb-4" {...props} />,
   li: props => <li className="mb-1" {...props} />,
+  pre: props => <pre {...props} />,
 };
 
 function App() {
