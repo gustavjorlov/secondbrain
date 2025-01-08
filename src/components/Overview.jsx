@@ -6,7 +6,7 @@ function Overview() {
     <div>
       <h2 className="text-2xl font-semibold mb-4">All Notes</h2>
       <ul className="space-y-2">
-        {contentList.map((file) => (
+        {contentList.sort((a, b) => a.name < b.name ? 1 : -1).map((file) => (
           <li key={file.name}>
             <Link
               to={`/${file.name}`}
