@@ -1,10 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import contentList from "../content/content-list.json";
 
-import { transitionViewIfSupported } from "../utils";
-
 function Overview() {
-  const navigate = useNavigate();
   return (
     <div>
       <ul className="space-y-2">
@@ -22,26 +19,17 @@ function Overview() {
             return (
               <li key={file.name}>
                 <Link
-                  style={{
-                    viewTransitionName: file.title
-                      .replaceAll(" ", "")
-                      .toLowerCase(),
-                  }}
                   to={`/${file.name}`}
                   className="text-blue-600 hover:text-blue-800 hover:underline"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    transitionViewIfSupported(() => {
-                      navigate(`/${file.name}`);
-                    });
-                  }}
+                  viewTransition
                 >
                   {date &&
                     date.toLocaleDateString("se-SE", {
                       year: "numeric",
                       month: "short",
                       day: "numeric",
-                    })}{" :: "}
+                    })}
+                  {" :: "}
                   {file.title}
                 </Link>
               </li>

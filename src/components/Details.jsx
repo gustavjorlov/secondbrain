@@ -1,14 +1,11 @@
 import { useState, useEffect, Suspense } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import contentList from "../content/content-list.json";
-import { transitionViewIfSupported } from "../utils";
+import { useParams, Link } from "react-router-dom";
 
 function Details() {
   const { filename } = useParams();
   const [Content, setContent] = useState(() => () => null);
   const [date, setDate] = useState(null);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     // Check if filename has a date prefix
@@ -32,24 +29,13 @@ function Details() {
       });
   }, [filename]);
 
-  const title = contentList.find((item) => item.name === filename).title;
-  console.log(title);
-
   return (
     <div>
       <div className="flex justify-between items-center">
         <Link
-          style={{
-            viewTransitionName: title.replaceAll(" ", "").toLowerCase(),
-          }}
           to="/"
           className="text-blue-600 hover:text-blue-800 hover:underline mb-4 inline-block"
-          onClick={(e) => {
-            e.preventDefault();
-            transitionViewIfSupported(() => {
-              navigate(`/`);
-            });
-          }}
+          viewTransition
         >
           ← Back to Overview
         </Link>
