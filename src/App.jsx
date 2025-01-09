@@ -23,16 +23,13 @@ const components = {
 };
 
 function App() {
-  const base = import.meta.env.PROD ? "/secondbrain" : "";
   return (
     <>
-      <h1>...</h1>
       <MDXProvider components={components}>
         <Router>
           <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-bold mb-8">Second Brain</h1>
             <Routes>
-              <Route element={<h1>Nothing</h1>} />
               <Route path="/" element={<Overview />} />
               <Route path="/:filename" element={<Details />} />
             </Routes>

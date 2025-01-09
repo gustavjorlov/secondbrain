@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+:root::view-transition-group(*) {
+  animation-duration: 0.75s;
+  animation-fill-mode: both;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

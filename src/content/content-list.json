@@ -1,14 +1,22 @@
 [
   {
+    "name": "24-01-09_api-guidelines",
+    "title": "Api Guidelines"
+  },
+  {
     "name": "24-01-08_getting-started",
     "title": "Getting Started"
+  },
+  {
+    "name": "24-01-09_react-hook-form",
+    "title": "React Hook Form"
   },
   {
     "name": "24-01-07_second-brain",
     "title": "Second Brain"
   },
   {
-    "name": "welcome",
-    "title": "Welcome"
+    "name": "24-01-08_why-second-brain",
+    "title": "Why Second Brain"
   }
 ]
