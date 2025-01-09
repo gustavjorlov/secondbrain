@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { MDXProvider } from '@mdx-js/react';
 import Overview from './components/Overview';
 import Details from './components/Details';
