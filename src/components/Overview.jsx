@@ -24,7 +24,7 @@ function Overview() {
                   viewTransition
                 >
                   {date &&
-                    date.toLocaleDateString("se-SE", {
+                    date.toLocaleDateString("sv-SE", {
                       year: "numeric",
                       month: "short",
                       day: "numeric",
