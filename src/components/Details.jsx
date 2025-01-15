@@ -1,5 +1,6 @@
 import { useState, useEffect, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
+import { parseDateFromFilename, formatDate, setDocumentTitle, formatTitleFromFilename } from "../utils";
 
 function Details() {
   const { filename } = useParams();
@@ -8,27 +9,15 @@ function Details() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Check if filename has a date prefix
-    const dateMatch = filename.match(/^(\d{2})-(\d{2})-(\d{2})_/);
-    if (dateMatch) {
-      const [, year, month, day] = dateMatch;
-      setDate(new Date(`20${year}-${month}-${day}`));
-    } else {
-      setDate(null);
-    }
+    setDate(parseDateFromFilename(filename));
 
     // Dynamically import MDX content
     import(`../content/${filename}.mdx`)
       .then((module) => {
         setContent(() => module.default);
         setError(null);
-        // Get the title from the filename
-        const title = filename
-          .replace(/^\d{2}-\d{2}-\d{2}_/, '')
-          .split('-')
-          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(' ');
-        document.title = `${title} - Second Brain`;
+        const title = formatTitleFromFilename(filename);
+        setDocumentTitle(title);
       })
       .catch((err) => {
         console.error("Error loading MDX:", err);
@@ -37,7 +26,7 @@ function Details() {
 
     // Cleanup: reset title when component unmounts
     return () => {
-      document.title = "Second Brain";
+      setDocumentTitle();
     };
   }, [filename]);
 
@@ -53,11 +42,7 @@ function Details() {
         </Link>
         {date && (
           <span className="text-gray-600 text-sm">
-            {date.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+            {formatDate(date)}
           </span>
         )}
       </div>
