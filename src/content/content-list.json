@@ -1,22 +1,38 @@
 [
   {
-    "name": "24-01-09_api-guidelines",
+    "name": "25-01-09_api-guidelines",
     "title": "Api Guidelines"
   },
   {
-    "name": "24-01-08_getting-started",
+    "name": "25-01-08_getting-started",
     "title": "Getting Started"
   },
   {
-    "name": "24-01-09_react-hook-form",
+    "name": "25-01-15_local-pipelines",
+    "title": "Local Pipelines"
+  },
+  {
+    "name": "25-01-09_react-hook-form",
     "title": "React Hook Form"
   },
   {
-    "name": "24-01-07_second-brain",
+    "name": "25-01-07_second-brain",
     "title": "Second Brain"
   },
   {
-    "name": "24-01-08_why-second-brain",
+    "name": "25-01-13_software-methodology",
+    "title": "Software Methodology"
+  },
+  {
+    "name": "25-01-10_terminal-commands",
+    "title": "Terminal Commands"
+  },
+  {
+    "name": "25-01-11_test-containers",
+    "title": "Test Containers"
+  },
+  {
+    "name": "25-01-08_why-second-brain",
     "title": "Why Second Brain"
   }
 ]

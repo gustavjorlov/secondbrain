@@ -22,11 +22,23 @@ function Details() {
       .then((module) => {
         setContent(() => module.default);
         setError(null);
+        // Get the title from the filename
+        const title = filename
+          .replace(/^\d{2}-\d{2}-\d{2}_/, '')
+          .split('-')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+        document.title = `${title} - Second Brain`;
       })
       .catch((err) => {
         console.error("Error loading MDX:", err);
         setError("Failed to load content");
       });
+
+    // Cleanup: reset title when component unmounts
+    return () => {
+      document.title = "Second Brain";
+    };
   }, [filename]);
 
   return (

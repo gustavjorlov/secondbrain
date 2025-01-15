@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import contentList from "../content/content-list.json";
 
 function Overview() {
+  useEffect(() => {
+    document.title = "Second Brain";
+  }, []);
+
   return (
     <div>
       <ul className="space-y-2">
