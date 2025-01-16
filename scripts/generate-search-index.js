@@ -13,15 +13,45 @@ const stopwords = new Set(natural.stopwords);
 
 // Additional technical/common words to filter out
 const additionalStopwords = new Set([
+  // Programming keywords
   'const', 'let', 'var', 'function', 'class', 'import', 'export',
   'return', 'true', 'false', 'null', 'undefined', 'async', 'await',
   'try', 'catch', 'if', 'else', 'for', 'while', 'do', 'switch',
   'case', 'break', 'continue', 'default', 'throw', 'new', 'delete',
   'typeof', 'instanceof', 'void', 'this', 'super', 'extends',
   'implements', 'interface', 'package', 'private', 'protected',
-  'public', 'static', 'yield', 'code', 'example', 'using', 'use',
+  'public', 'static', 'yield',
+  
+  // Common technical terms
+  'code', 'example', 'using', 'use', 'used', 'uses',
   'get', 'set', 'data', 'type', 'string', 'number', 'boolean',
-  'object', 'array', 'file', 'files', 'directory', 'folder'
+  'object', 'array', 'file', 'files', 'directory', 'folder',
+  
+  // Common verbs and adjectives
+  'make', 'made', 'making', 'need', 'needs', 'needed',
+  'want', 'wants', 'wanted', 'like', 'likes', 'liked',
+  'see', 'sees', 'seen', 'show', 'shows', 'shown',
+  'take', 'takes', 'taken', 'give', 'gives', 'given',
+  'find', 'finds', 'found', 'think', 'thinks', 'thought',
+  'good', 'better', 'best', 'bad', 'worse', 'worst',
+  'high', 'higher', 'highest', 'low', 'lower', 'lowest',
+  'big', 'bigger', 'biggest', 'small', 'smaller', 'smallest',
+  
+  // Common nouns and prepositions
+  'thing', 'things', 'way', 'ways', 'time', 'times',
+  'day', 'days', 'week', 'weeks', 'month', 'months',
+  'year', 'years', 'place', 'places', 'person', 'people',
+  'part', 'parts', 'kind', 'kinds', 'sort', 'sorts',
+  'into', 'onto', 'under', 'over', 'about', 'through',
+  'during', 'before', 'after', 'above', 'below',
+  'will', 'would', 'could', 'should', 'must', 'may', 'might',
+  
+  // Common tech documentation words
+  'note', 'notes', 'example', 'examples', 'sample', 'samples',
+  'step', 'steps', 'guide', 'guides', 'tutorial', 'tutorials',
+  'doc', 'docs', 'documentation', 'reference', 'references',
+  'info', 'information', 'detail', 'details', 'overview',
+  'summary', 'introduction', 'conclusion', 'section', 'sections'
 ]);
 
 async function readMdxFiles() {
