@@ -18,7 +18,7 @@ Steps to Implement GraphQL Federation
 Each service represents a subgraph and defines its own GraphQL schema.
 
 Example Schema for Service 1 (Users Service):
-
+```
 type User @key(fields: "id") {
   id: ID!
   name: String!
@@ -26,9 +26,10 @@ type User @key(fields: "id") {
 type Query {
   getUser(id: ID!): User
 }
+```
 
 Example Schema for Service 2 (Orders Service):
-
+```
 type Order @key(fields: "id") {
   id: ID!
   description: String!
@@ -43,6 +44,7 @@ extend type User @key(fields: "id") {
 type Query {
   getOrder(id: ID!): Order
 }
+```
 
 	•	@key: Identifies the primary field(s) used to uniquely identify a type across services.
 	•	@external: Indicates fields defined in another service.
@@ -53,11 +55,11 @@ You’ll need the following libraries for federation. Install them using your pa
 
 For subgraphs:
 
-npm install @apollo/subgraph graphql
+`npm install @apollo/subgraph graphql`
 
 For the gateway:
 
-npm install @apollo/gateway graphql
+`npm install @apollo/gateway graphql`
 
 3. Build Subgraph Services
 
@@ -65,6 +67,7 @@ Create an executable schema and run a GraphQL server for each subgraph.
 
 Example Users Service (Node.js/Express):
 
+```
 const { ApolloServer } = require('@apollo/server');
 const { buildSubgraphSchema } = require('@apollo/subgraph');
 const { gql } = require('graphql-tag');
@@ -95,6 +98,7 @@ const server = new ApolloServer({
 server.listen({ port: 4001 }).then(({ url }) => {
   console.log(`Users service running at ${url}`);
 });
+```
 
 Repeat similar steps for the Orders service.
 
@@ -103,7 +107,7 @@ Repeat similar steps for the Orders service.
 The gateway combines subgraphs into a single unified graph.
 
 Gateway Example:
-
+```
 const { ApolloGateway } = require('@apollo/gateway');
 const { ApolloServer } = require('@apollo/server');
 
@@ -122,6 +126,7 @@ const server = new ApolloServer({
 server.listen({ port: 4000 }).then(({ url }) => {
   console.log(`Federated GraphQL Gateway running at ${url}`);
 });
+```
 
 5. Test the Unified Graph
 
@@ -129,6 +134,7 @@ Query the gateway to fetch data from multiple subgraphs in one request.
 
 Example Query:
 
+```
 query {
   getUser(id: "1") {
     id
@@ -139,6 +145,7 @@ query {
     }
   }
 }
+```
 
 This query retrieves user data from the Users service and orders data from the Orders service.
 
