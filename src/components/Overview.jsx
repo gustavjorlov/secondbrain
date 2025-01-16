@@ -1,18 +1,23 @@
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 import contentList from "../content/content-list.json";
 import searchIndex from "../content/search-index.json";
 import { parseDateFromFilename, formatDate, setDocumentTitle } from "../utils";
 import Search from "./Search";
 
 function Overview() {
-  const [selectedWord, setSelectedWord] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedWord = searchParams.get('topic');
 
   useEffect(() => {
     setDocumentTitle();
   }, []);
 
-  const filteredFiles = selectedWord
+  const handleWordSelect = (word) => {
+    setSearchParams(word ? { topic: word } : {});
+  };
+
+  const filteredFiles = selectedWord && searchIndex[selectedWord]
     ? contentList.filter(file => searchIndex[selectedWord].includes(file.name))
     : contentList;
 
@@ -44,8 +49,8 @@ function Overview() {
       </ul>
       <Search
         selectedWord={selectedWord}
-        onWordSelect={setSelectedWord}
-        onClear={() => setSelectedWord(null)}
+        onWordSelect={handleWordSelect}
+        onClear={() => handleWordSelect(null)}
       />
     </div>
   );
