@@ -1,0 +1,150 @@
+# graphql federation
+
+[Voyage 1 - youtube](https://youtu.be/DGAkGULuwEI?si=00G6yj9ET8waWHjE)
+
+A Short Tutorial on GraphQL Federation
+
+GraphQL Federation is a technique to manage and scale GraphQL APIs by composing multiple GraphQL services into a single unified graph. It allows teams to independently develop, deploy, and maintain their own GraphQL schemas while enabling seamless querying across the federated services. Federation is particularly useful for organizations with microservices architectures.
+
+Key Concepts of GraphQL Federation
+	1.	Gateway: Acts as the entry point for clients, unifying multiple subgraphs into a single API.
+	2.	Subgraphs: Independent GraphQL services that contribute their schema and data to the unified graph.
+	3.	Schema Stitching vs. Federation: Unlike schema stitching, Federation provides more flexibility with declarative composition and dynamic runtime resolution.
+
+Steps to Implement GraphQL Federation
+
+1. Setup Subgraphs
+
+Each service represents a subgraph and defines its own GraphQL schema.
+
+Example Schema for Service 1 (Users Service):
+
+type User @key(fields: "id") {
+  id: ID!
+  name: String!
+}
+type Query {
+  getUser(id: ID!): User
+}
+
+Example Schema for Service 2 (Orders Service):
+
+type Order @key(fields: "id") {
+  id: ID!
+  description: String!
+  userId: ID!
+}
+
+extend type User @key(fields: "id") {
+  id: ID! @external
+  orders: [Order]
+}
+
+type Query {
+  getOrder(id: ID!): Order
+}
+
+	•	@key: Identifies the primary field(s) used to uniquely identify a type across services.
+	•	@external: Indicates fields defined in another service.
+
+2. Install Required Libraries
+
+You’ll need the following libraries for federation. Install them using your package manager (e.g., npm or yarn).
+
+For subgraphs:
+
+npm install @apollo/subgraph graphql
+
+For the gateway:
+
+npm install @apollo/gateway graphql
+
+3. Build Subgraph Services
+
+Create an executable schema and run a GraphQL server for each subgraph.
+
+Example Users Service (Node.js/Express):
+
+const { ApolloServer } = require('@apollo/server');
+const { buildSubgraphSchema } = require('@apollo/subgraph');
+const { gql } = require('graphql-tag');
+
+const typeDefs = gql`
+  type User @key(fields: "id") {
+    id: ID!
+    name: String!
+  }
+  type Query {
+    getUser(id: ID!): User
+  }
+`;
+
+const resolvers = {
+  Query: {
+    getUser: (_, { id }) => ({ id, name: "John Doe" }),
+  },
+  User: {
+    __resolveReference: (user) => ({ id: user.id, name: "John Doe" }),
+  },
+};
+
+const server = new ApolloServer({
+  schema: buildSubgraphSchema({ typeDefs, resolvers }),
+});
+
+server.listen({ port: 4001 }).then(({ url }) => {
+  console.log(`Users service running at ${url}`);
+});
+
+Repeat similar steps for the Orders service.
+
+4. Set Up the Gateway
+
+The gateway combines subgraphs into a single unified graph.
+
+Gateway Example:
+
+const { ApolloGateway } = require('@apollo/gateway');
+const { ApolloServer } = require('@apollo/server');
+
+const gateway = new ApolloGateway({
+  subgraphs: [
+    { name: 'users', url: 'http://localhost:4001' },
+    { name: 'orders', url: 'http://localhost:4002' },
+  ],
+});
+
+const server = new ApolloServer({
+  gateway,
+  introspection: true,
+});
+
+server.listen({ port: 4000 }).then(({ url }) => {
+  console.log(`Federated GraphQL Gateway running at ${url}`);
+});
+
+5. Test the Unified Graph
+
+Query the gateway to fetch data from multiple subgraphs in one request.
+
+Example Query:
+
+query {
+  getUser(id: "1") {
+    id
+    name
+    orders {
+      id
+      description
+    }
+  }
+}
+
+This query retrieves user data from the Users service and orders data from the Orders service.
+
+Advantages of GraphQL Federation
+	•	Scalability: Enables multiple teams to independently manage subgraphs.
+	•	Modularity: Breaks down a monolithic schema into smaller, manageable subgraphs.
+	•	Flexibility: Services can evolve independently, reducing dependencies.
+
+GraphQL Federation is a powerful approach for teams building large-scale, distributed applications. By using Apollo Federation, you can efficiently create a unified graph while maintaining the autonomy of individual services.
