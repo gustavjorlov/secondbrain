@@ -14,7 +14,7 @@ Key Concepts of GraphQL Federation
 
 Steps to Implement GraphQL Federation
 
-1. Setup Subgraphs
+## 1. Setup Subgraphs
 
 Each service represents a subgraph and defines its own GraphQL schema.
 
@@ -50,7 +50,7 @@ type Query {
 	•	@key: Identifies the primary field(s) used to uniquely identify a type across services.
 	•	@external: Indicates fields defined in another service.
 
-2. Install Required Libraries
+## 2. Install Required Libraries
 
 You’ll need the following libraries for federation. Install them using your package manager (e.g., npm or yarn).
 
@@ -62,7 +62,7 @@ For the gateway:
 
 `npm install @apollo/gateway graphql`
 
-3. Build Subgraph Services
+## 3. Build Subgraph Services
 
 Create an executable schema and run a GraphQL server for each subgraph.
 
@@ -103,7 +103,7 @@ server.listen({ port: 4001 }).then(({ url }) => {
 
 Repeat similar steps for the Orders service.
 
-4. Set Up the Gateway
+## 4. Set Up the Gateway
 
 The gateway combines subgraphs into a single unified graph.
 
@@ -129,7 +129,7 @@ server.listen({ port: 4000 }).then(({ url }) => {
 });
 ```
 
-5. Test the Unified Graph
+## 5. Test the Unified Graph
 
 Query the gateway to fetch data from multiple subgraphs in one request.
 
