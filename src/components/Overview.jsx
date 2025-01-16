@@ -9,7 +9,7 @@ function Overview() {
   }, []);
 
   return (
-    <div>
+    <div className="text-gray-800 dark:text-gray-200">
       <ul className="space-y-2">
         {contentList
           .sort((a, b) => (a.name < b.name ? 1 : -1))
@@ -19,7 +19,7 @@ function Overview() {
               <li key={file.name}>
                 <Link
                   to={`/${file.name}`}
-                  className="text-blue-600 hover:text-blue-800 hover:underline"
+                  className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
                   viewTransition
                 >
                   {date && formatDate(date, "sv-SE", {

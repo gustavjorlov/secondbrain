@@ -31,24 +31,24 @@ function Details() {
   }, [filename]);
 
   return (
-    <div>
+    <div className="text-gray-800 dark:text-gray-200">
       <div className="flex justify-between items-center">
         <Link
           to="/"
-          className="text-blue-600 hover:text-blue-800 hover:underline mb-4 inline-block"
+          className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline mb-4 inline-block"
           viewTransition
         >
           ← Back to Overview
         </Link>
         {date && (
-          <span className="text-gray-600 text-sm">
+          <span className="text-gray-600 dark:text-gray-400 text-sm">
             {formatDate(date)}
           </span>
         )}
       </div>
-      <div className="prose max-w-none mt-6">
-        <Suspense fallback={<div>Loading...</div>}>
-          {error ? <h1>{error}</h1> : <Content />}
+      <div className="prose dark:prose-invert max-w-none mt-6">
+        <Suspense fallback={<div className="text-gray-600 dark:text-gray-400">Loading...</div>}>
+          {error ? <h1 className="text-red-600 dark:text-red-400">{error}</h1> : <Content />}
         </Suspense>
       </div>
     </div>
