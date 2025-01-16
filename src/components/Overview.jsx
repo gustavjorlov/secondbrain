@@ -1,17 +1,25 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import contentList from "../content/content-list.json";
+import searchIndex from "../content/search-index.json";
 import { parseDateFromFilename, formatDate, setDocumentTitle } from "../utils";
+import Search from "./Search";
 
 function Overview() {
+  const [selectedWord, setSelectedWord] = useState(null);
+
   useEffect(() => {
     setDocumentTitle();
   }, []);
 
+  const filteredFiles = selectedWord
+    ? contentList.filter(file => searchIndex[selectedWord].includes(file.name))
+    : contentList;
+
   return (
-    <div className="text-gray-800 dark:text-gray-200">
-      <ul className="space-y-2">
-        {contentList
+    <div className="text-gray-800 dark:text-gray-200 flex flex-col lg:flex-row lg:gap-8">
+      <ul className="space-y-2 lg:flex-1 order-first lg:order-none mb-10">
+        {filteredFiles
           .sort((a, b) => (a.name < b.name ? 1 : -1))
           .map((file) => {
             const date = parseDateFromFilename(file.name);
@@ -34,6 +42,11 @@ function Overview() {
             );
           })}
       </ul>
+      <Search
+        selectedWord={selectedWord}
+        onWordSelect={setSelectedWord}
+        onClear={() => setSelectedWord(null)}
+      />
     </div>
   );
 }
