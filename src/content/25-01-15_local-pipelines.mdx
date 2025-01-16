@@ -1,5 +1,51 @@
 # run local pipelines
 
-Gitlab CI: [gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
+## Gitlab CI
 
-GitHub Actions: [ACT](https://github.com/nektos/act)
+[gitlab-ci-local](https://github.com/firecow/gitlab-ci-local)
+
+### Step-by-Step Guide: Using `gitlab-ci-local` to Test GitLab CI Pipelines Locally
+
+`gitlab-ci-local` is a CLI tool that allows you to test GitLab CI/CD pipelines on your local machine, simulating the GitLab CI environment. Follow these steps to get started:
+
+---
+
+#### 1. **Install `gitlab-ci-local`**
+You can install `gitlab-ci-local` globally using `npm` or `yarn`.
+
+```bash
+  npm install -g gitlab-ci-local
+  yarn global add gitlab-ci-local
+```
+
+`gitlab-ci-local --version`
+
+If your CI/CD pipeline depends on variables, create a .env file or export them in your terminal session.
+
+Example .env file:
+```
+  VAR1=value1
+  VAR2=value2
+```
+
+#### Load the environment variables with:
+
+`source .env`
+
+#### Run the pipeline 
+
+`gitlab-ci-local`
+
+#### Run a Specific Job
+
+`gitlab-ci-local <job-name>`
+
+#### Test with a Specific Stage
+
+`gitlab-ci-local --stage <stage-name>`
+
+---
+
+# GitHub Actions
+
+[ACT](https://github.com/nektos/act)
