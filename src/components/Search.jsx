@@ -2,8 +2,9 @@ import searchIndex from "../content/search-index.json";
 import PropTypes from "prop-types";
 
 function Search({ onWordSelect, selectedWord, onClear }) {
-  const words = Object.keys(searchIndex)
-    .sort((a, b) => searchIndex[b].length - searchIndex[a].length);
+  const words = Object.keys(searchIndex).sort(
+    (a, b) => searchIndex[b].length - searchIndex[a].length
+  );
 
   return (
     <div className="lg:w-64 mb-6 lg:mb-0">
@@ -20,21 +21,19 @@ function Search({ onWordSelect, selectedWord, onClear }) {
           </button>
         )}
       </div>
-      <div className="flex flex-wrap lg:flex-col gap-2">
+      <div className="flex flex-wrap gap-2">
         {words.map((word) => (
           <button
             key={word}
             onClick={() => onWordSelect(word)}
-            className={`px-3 py-1 rounded-full text-sm transition-colors w-full text-left ${
+            className={`px-3 py-1 rounded-full text-sm transition-colors text-left ${
               selectedWord === word
                 ? "bg-blue-600 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
             }`}
           >
             {word}
-            <span className="ml-1 text-xs">
-              ({searchIndex[word].length})
-            </span>
+            <span className="ml-1 text-xs">({searchIndex[word].length})</span>
           </button>
         ))}
       </div>
@@ -45,7 +44,7 @@ function Search({ onWordSelect, selectedWord, onClear }) {
 Search.propTypes = {
   onWordSelect: PropTypes.func.isRequired,
   selectedWord: PropTypes.string,
-  onClear: PropTypes.func.isRequired
+  onClear: PropTypes.func.isRequired,
 };
 
 export default Search;
