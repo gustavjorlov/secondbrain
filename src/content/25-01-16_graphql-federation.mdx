@@ -48,6 +48,89 @@ By mastering these concepts, you can ensure your federated GraphQL server operat
 
 ---
 
+# Custom Directives
+
+GraphQL Federation introduces a set of custom directives that allow you to define how services will collaborate and extend a unified schema. Below is a list of the key custom directives in GraphQL Federation with a brief description of each:
+
+1. @key
+- Description: Marks the field or fields that uniquely identify an entity within a service. This is used to enable entity resolution across multiple federated services. You can specify a single field or a combination of fields as the key for an entity.
+- Usage:
+```
+type Product @key(fields: "id") {
+  id: ID!
+  name: String
+}
+```
+
+2. @external
+- Description: Marks a field as being defined by another service. This is used when you need to reference a field that is part of an entity but is not owned by the current service.
+- Usage:
+```
+type Product {
+  id: ID!
+  name: String
+  price: Float @external
+}
+```
+
+3. @requires
+- Description: Specifies that a field in a federated service requires other fields from the same entity to be resolved. This is typically used when the current service doesn't own all fields required to compute a field, but needs them to be present to resolve its field.
+- Usage:
+```
+type Product @key(fields: "id") {
+  id: ID!
+  name: String
+  price: Float
+  discountedPrice: Float @requires(fields: "price")
+}
+```
+
+4. @provides
+- Description: Indicates that a field in a service provides additional data for an entity to be resolved by other services. This is often used when a service enriches an entity with fields that are then used by other services.
+- Usage:
+```
+type Product @key(fields: "id") {
+  id: ID!
+  name: String
+}
+
+extend type Product {
+  discountedPrice: Float @provides(fields: "discountedPrice")
+}
+```
+
+5. @extends
+- Description: Marks a type as an extension of another type defined in a different service. This is used when a type is initially defined in one service, and then extended in other services to add more fields.
+- Usage:
+```
+extend type Product @key(fields: "id") {
+  discountedPrice: Float
+}
+```
+
+6. @shareable
+- Description: Used for fields that are shared across multiple services, typically for things like common types or fields that need to be accessed in multiple federated schemas.
+- Usage:
+```
+type CommonInfo @shareable {
+  id: ID!
+  value: String
+}
+```
+
+7. @inaccessible
+- Description: Marks a field or type as inaccessible to other services, meaning the field cannot be queried by other services in the federation. It can still be used within the same service.
+- Usage:
+```
+type Product {
+  id: ID!
+  name: String
+  secretInfo: String @inaccessible
+}
+```
+
+---
+
 # A Short Tutorial on GraphQL Federation
 
 GraphQL Federation is a technique to manage and scale GraphQL APIs by composing multiple GraphQL services into a single unified graph. It allows teams to independently develop, deploy, and maintain their own GraphQL schemas while enabling seamless querying across the federated services. Federation is particularly useful for organizations with microservices architectures.
