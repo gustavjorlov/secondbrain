@@ -4,12 +4,24 @@
     "title": "Api Guidelines"
   },
   {
+    "name": "25-01-18_bash",
+    "title": "Bash"
+  },
+  {
     "name": "25-01-08_getting-started",
     "title": "Getting Started"
   },
   {
+    "name": "25-01-16_graphql-federation",
+    "title": "Graphql Federation"
+  },
+  {
     "name": "25-01-15_local-pipelines",
     "title": "Local Pipelines"
+  },
+  {
+    "name": "25-01-20_quotes",
+    "title": "Quotes"
   },
   {
     "name": "25-01-09_react-hook-form",
@@ -26,6 +38,10 @@
   {
     "name": "25-01-10_terminal-commands",
     "title": "Terminal Commands"
+  },
+  {
+    "name": "25-01-19_terminal-tips",
+    "title": "Terminal Tips"
   },
   {
     "name": "25-01-11_test-containers",
