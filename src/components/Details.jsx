@@ -1,6 +1,11 @@
 import { useState, useEffect, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
-import { parseDateFromFilename, formatDate, setDocumentTitle, formatTitleFromFilename } from "../utils";
+import {
+  parseDateFromFilename,
+  formatDate,
+  setDocumentTitle,
+  formatTitleFromFilename,
+} from "../utils";
 
 function Details() {
   const { filename } = useParams();
@@ -31,27 +36,44 @@ function Details() {
   }, [filename]);
 
   return (
-    <div className="text-gray-800 dark:text-gray-200">
-      <div className="flex justify-between items-center">
-        <Link
-          to="/"
-          className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline mb-4 inline-block"
-          viewTransition
-        >
-          ← Back to Overview
-        </Link>
-        {date && (
-          <span className="text-gray-600 dark:text-gray-400 text-sm">
-            {formatDate(date)}
-          </span>
-        )}
+    <>
+      <h1
+        className="page-title text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100"
+        style={{ viewTransitionName: "page-title" }}
+      >
+        Second Brain
+      </h1>
+      <hr className="mb-8" />
+      <div className="text-gray-800 dark:text-gray-200">
+        <div className="flex justify-between items-center">
+          <Link
+            to="/"
+            className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline mb-4 inline-block"
+            viewTransition
+          >
+            ← Back to Overview
+          </Link>
+          {date && (
+            <span className="text-gray-600 dark:text-gray-400 text-sm">
+              {formatDate(date)}
+            </span>
+          )}
+        </div>
+        <div className="prose dark:prose-invert max-w-none mt-6">
+          <Suspense
+            fallback={
+              <div className="text-gray-600 dark:text-gray-400">Loading...</div>
+            }
+          >
+            {error ? (
+              <h1 className="text-red-600 dark:text-red-400">{error}</h1>
+            ) : (
+              <Content />
+            )}
+          </Suspense>
+        </div>
       </div>
-      <div className="prose dark:prose-invert max-w-none mt-6">
-        <Suspense fallback={<div className="text-gray-600 dark:text-gray-400">Loading...</div>}>
-          {error ? <h1 className="text-red-600 dark:text-red-400">{error}</h1> : <Content />}
-        </Suspense>
-      </div>
-    </div>
+    </>
   );
 }
 

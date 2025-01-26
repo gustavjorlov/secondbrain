@@ -61,10 +61,6 @@ function App() {
         <Router>
           <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
             <div className="container mx-auto px-4 py-8">
-              <h1 className="text-5xl font-bold mb-8 text-gray-900 dark:text-gray-100">
-                Second Brain
-              </h1>
-              <hr className="mb-8" />
               <Routes>
                 <Route path="/" element={<Overview />} />
                 <Route path="/:filename" element={<Details />} />
