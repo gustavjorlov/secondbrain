@@ -1,3 +1,4 @@
+
 import { useState, useEffect, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
@@ -53,11 +54,21 @@ function Details() {
           >
             ← Back to Overview
           </Link>
-          {date && (
-            <span className="text-gray-600 dark:text-gray-400 text-sm">
-              {formatDate(date)}
-            </span>
-          )}
+          <div className="flex items-center gap-4">
+            {date && (
+              <span className="text-gray-600 dark:text-gray-400 text-sm">
+                {formatDate(date)}
+              </span>
+            )}
+            <a
+              href={`https://github.com/gustavjorlov/secondbrain/blob/main/src/content/${filename}.mdx`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 text-sm hover:underline"
+            >
+              Edit
+            </a>
+          </div>
         </div>
         <div className="prose dark:prose-invert max-w-none mt-6">
           <Suspense
