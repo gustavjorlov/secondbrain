@@ -86,18 +86,33 @@ function Overview() {
                 )
               )
                 .map((linkStr) => JSON.parse(linkStr))
-                .map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover-glow"
-                    >
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
+                .map((link, index) => {
+                  const text = link.text.toLowerCase();
+                  let prefix = "";
+                  if (text.startsWith("video") || text.includes("youtube")) {
+                    prefix = "📺 ";
+                  } else if (text.startsWith("article")) {
+                    prefix = "🖌️ ";
+                  } else if (
+                    text.startsWith("docs") ||
+                    text.startsWith("documentation")
+                  ) {
+                    prefix = "📚 ";
+                  }
+                  return (
+                    <li key={index}>
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover-glow"
+                      >
+                        {prefix}
+                        {link.text}
+                      </a>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
         </div>
