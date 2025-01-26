@@ -4,7 +4,7 @@
     "title": "Ai Coding",
     "links": [
       {
-        "text": "Best AI Coding Tools for Developers in 2025",
+        "text": "Article: Best AI Coding Tools for Developers in 2025",
         "url": "https://www.builder.io/blog/best-ai-coding-tools"
       }
     ]
@@ -14,7 +14,7 @@
     "title": "Api Guidelines",
     "links": [
       {
-        "text": "Zalando RESTful API and Event Guidelines",
+        "text": "Docs: Zalando RESTful API and Event Guidelines",
         "url": "https://opensource.zalando.com/restful-api-guidelines"
       }
     ]
@@ -24,11 +24,11 @@
     "title": "Bash",
     "links": [
       {
-        "text": "google bash style guide",
+        "text": "Article: Google's bash style guide",
         "url": "https://google.github.io/styleguide/shellguide.html"
       },
       {
-        "text": "youtube video",
+        "text": "Video: Google's bash style guide",
         "url": "https://youtu.be/Y_erZnIhgKg?si=C118qk5jhB8V6kjM"
       }
     ]
@@ -39,25 +39,15 @@
     "links": []
   },
   {
-    "name": "25-01-08_getting-started",
-    "title": "Getting Started",
-    "links": [
-      {
-        "text": "Links",
-        "url": "https://example.com"
-      }
-    ]
-  },
-  {
     "name": "25-01-16_graphql-federation",
     "title": "Graphql Federation",
     "links": [
       {
-        "text": "Voyage 1 - youtube",
+        "text": "Video: Voyage 1, GraphQL Federation",
         "url": "https://youtu.be/DGAkGULuwEI?si=00G6yj9ET8waWHjE"
       },
       {
-        "text": "10 Best Practices for Schema Stewardship (Part 1 of 2)",
+        "text": "Article: 10 Best Practices for Schema Stewardship (Part 1 of 2)",
         "url": "https://www.apollographql.com/blog/10-best-practices-for-schema-stewardship"
       }
     ]
@@ -67,11 +57,11 @@
     "title": "Local Pipelines",
     "links": [
       {
-        "text": "gitlab-ci-local",
+        "text": "Docs: gitlab-ci-local",
         "url": "https://github.com/firecow/gitlab-ci-local"
       },
       {
-        "text": "ACT",
+        "text": "Docs: ACT, GitHub Actions Local pipelines",
         "url": "https://github.com/nektos/act"
       }
     ]
@@ -86,7 +76,7 @@
     "title": "React Hook Form",
     "links": [
       {
-        "text": "react-hook-form",
+        "text": "Docs: react-hook-form",
         "url": "https://react-hook-form.com/"
       },
       {
@@ -100,7 +90,7 @@
     "title": "Second Brain",
     "links": [
       {
-        "text": "inspiration from NetworkChuck",
+        "text": "Video: inspiration from NetworkChuck",
         "url": "https://youtu.be/dnE7c0ELEH8?si=XmOo_bNxNvMM425B"
       }
     ]
@@ -110,11 +100,11 @@
     "title": "Software Methodology",
     "links": [
       {
-        "text": "The Over Engineering Pendulum",
+        "text": "Article: The Over Engineering Pendulum",
         "url": "https://threedots.tech/post/the-over-engineering-pendulum/?ref=dailydev"
       },
       {
-        "text": "Break Stuff on Purpose",
+        "text": "Article: Break Stuff on Purpose",
         "url": "https://slack.engineering/break-stuff-on-purpose/"
       }
     ]
@@ -129,7 +119,7 @@
     "title": "Terminal Tips",
     "links": [
       {
-        "text": "5 Terminal Hacks",
+        "text": "Video: 5 Terminal Hacks",
         "url": "https://youtu.be/mvWYdrn7m2c?si=yJuckeXD8pprPs3-"
       }
     ]
@@ -139,7 +129,7 @@
     "title": "Test Containers",
     "links": [
       {
-        "text": "test containers",
+        "text": "Video: Test Containers",
         "url": "https://youtu.be/sNg0bnMF_qY?si=mBPhKvjguhp01gZI"
       }
     ]
