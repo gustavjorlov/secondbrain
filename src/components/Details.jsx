@@ -1,5 +1,5 @@
 
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect, Suspense, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import searchIndex from "../content/search-index.json";
 import contentList from "../content/content-list.json";
@@ -18,6 +18,13 @@ function Details() {
   const [error, setError] = useState(null);
   const [tags, setTags] = useState([]);
   const [metadata, setMetadata] = useState(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const updateScrollProgress = useCallback(() => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const currentProgress = (window.scrollY / scrollHeight) * 100;
+    setScrollProgress(currentProgress);
+  }, []);
 
   useEffect(() => {
     setDate(parseDateFromFilename(filename));
@@ -45,14 +52,31 @@ function Details() {
         setError("Failed to load content");
       });
 
-    // Cleanup: reset title when component unmounts
+    // Add scroll event listener
+    window.addEventListener('scroll', updateScrollProgress);
+    updateScrollProgress(); // Initial calculation
+
+    // Cleanup: reset title and remove scroll listener when component unmounts
     return () => {
       setDocumentTitle();
+      window.removeEventListener('scroll', updateScrollProgress);
     };
-  }, [filename]);
+  }, [filename, updateScrollProgress]);
 
   return (
     <>
+      <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: `${scrollProgress}%`,
+          height: '3px',
+          backgroundColor: '#3b82f6', // blue-500 to match the link color
+          transition: 'width 0.1s',
+          zIndex: 50
+        }}
+      />
       <h1
         className="page-title text-2xl font-bold mb-8 text-gray-900 dark:text-gray-100"
         style={{ viewTransitionName: "page-title" }}

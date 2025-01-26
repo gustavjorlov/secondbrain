@@ -844,6 +844,7 @@ const technicalWords = new Set([
   "golang",
   "node",
   "react",
+  "React",
   "vue",
   "angular",
   "svelte",
