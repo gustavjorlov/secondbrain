@@ -1,4 +1,44 @@
 {
+  "video": [
+    "25-01-18_bash",
+    "25-01-16_graphql-federation",
+    "25-01-26_remix",
+    "25-01-07_second-brain",
+    "25-01-19_terminal-tips",
+    "25-01-11_test-containers"
+  ],
+  "article": [
+    "25-01-20_ai-coding",
+    "25-01-18_bash",
+    "25-01-16_graphql-federation",
+    "25-01-13_software-methodology"
+  ],
+  "using": [
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation",
+    "25-01-15_local-pipelines",
+    "25-01-09_react-hook-form"
+  ],
+  "tools": [
+    "25-01-20_ai-coding",
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation"
+  ],
+  "developers": [
+    "25-01-20_ai-coding",
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation"
+  ],
+  "use": [
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation",
+    "25-01-09_react-hook-form"
+  ],
+  "pipelines": [
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation",
+    "25-01-15_local-pipelines"
+  ],
   "management": [
     "25-01-22_elons-five-steps",
     "25-01-16_graphql-federation",
@@ -9,14 +49,55 @@
     "25-01-16_graphql-federation",
     "25-01-15_local-pipelines"
   ],
+  "set": [
+    "25-01-16_graphql-federation",
+    "25-01-20_quotes",
+    "25-01-09_react-hook-form"
+  ],
   "test": [
     "25-01-16_graphql-federation",
     "25-01-15_local-pipelines",
     "25-01-11_test-containers"
   ],
+  "not": [
+    "25-01-16_graphql-federation",
+    "25-01-09_react-hook-form",
+    "25-01-07_second-brain"
+  ],
+  "allows": [
+    "25-01-16_graphql-federation",
+    "25-01-15_local-pipelines",
+    "25-01-09_react-hook-form"
+  ],
+  "install": [
+    "25-01-16_graphql-federation",
+    "25-01-15_local-pipelines",
+    "25-01-09_react-hook-form"
+  ],
+  "terminal": [
+    "25-01-15_local-pipelines",
+    "25-01-10_terminal-commands",
+    "25-01-19_terminal-tips"
+  ],
   "api": [
     "25-01-09_api-guidelines",
     "25-01-16_graphql-federation"
+  ],
+  "requirements": [
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation"
+  ],
+  "optimize": [
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation"
+  ],
+  "automate": [
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation"
+  ],
+  "software": [
+    "25-01-22_elons-five-steps",
+    "25-01-13_software-methodology"
   ],
   "development": [
     "25-01-22_elons-five-steps",
@@ -37,64 +118,5 @@
   "team": [
     "25-01-22_elons-five-steps",
     "25-01-16_graphql-federation"
-  ],
-  "deployment": [
-    "25-01-22_elons-five-steps",
-    "25-01-16_graphql-federation"
-  ],
-  "system": [
-    "25-01-22_elons-five-steps",
-    "25-01-13_software-methodology"
-  ],
-  "resolution": [
-    "25-01-22_elons-five-steps",
-    "25-01-16_graphql-federation"
-  ],
-  "monitoring": [
-    "25-01-22_elons-five-steps",
-    "25-01-16_graphql-federation"
-  ],
-  "design": [
-    "25-01-16_graphql-federation",
-    "25-01-23_write-a-book"
-  ],
-  "register": [
-    "25-01-16_graphql-federation",
-    "25-01-09_react-hook-form"
-  ],
-  "error": [
-    "25-01-16_graphql-federation",
-    "25-01-09_react-hook-form"
-  ],
-  "dynamic": [
-    "25-01-16_graphql-federation",
-    "25-01-09_react-hook-form"
-  ],
-  "npm": [
-    "25-01-16_graphql-federation",
-    "25-01-09_react-hook-form"
-  ],
-  "yarn": [
-    "25-01-16_graphql-federation",
-    "25-01-09_react-hook-form"
-  ],
-  "react": [
-    "25-01-09_react-hook-form",
-    "25-01-26_remix"
-  ],
-  "event": [
-    "25-01-09_api-guidelines"
-  ],
-  "less": [
-    "25-01-22_elons-five-steps"
-  ],
-  "process": [
-    "25-01-22_elons-five-steps"
-  ],
-  "efficiency": [
-    "25-01-22_elons-five-steps"
-  ],
-  "feature": [
-    "25-01-22_elons-five-steps"
   ]
 }

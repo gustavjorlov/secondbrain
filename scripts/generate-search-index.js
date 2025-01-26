@@ -844,7 +844,6 @@ const technicalWords = new Set([
   "golang",
   "node",
   "react",
-  "React",
   "vue",
   "angular",
   "svelte",
@@ -1699,8 +1698,8 @@ function isSignificantWord(word) {
     !commonStopwords.has(lowerWord) &&
     !stopwords.has(lowerWord) &&
     (technicalWords.has(lowerWord) || // Keep known technical words
-      /^[a-z]+(?:[A-Z][a-z]*)+$/.test(word) || // Keep camelCase words
-      word.includes("-")) && // Keep hyphenated words
+      /^[a-z]+(?:[A-Z][a-z]*)+$/i.test(word) || // Keep camelCase words (case-insensitive)
+      word.toLowerCase().includes("-")) && // Keep hyphenated words (case-insensitive)
     isNaN(word) // Filter out numbers
   );
 }
@@ -1713,17 +1712,21 @@ function getWordFrequencies(files) {
     const processedContent = processContent(content);
     const words = tokenizer.tokenize(processedContent) || [];
 
+    // First convert to lowercase and filter, then create unique set
     const uniqueWords = new Set(
-      words.map((word) => word.toLowerCase()).filter(isSignificantWord)
+      words
+        .map((word) => word.toLowerCase())
+        .filter((word) => isSignificantWord(word))
     );
 
     uniqueWords.forEach((word) => {
-      wordFrequencies.set(word, (wordFrequencies.get(word) || 0) + 1);
+      const lowerWord = word.toLowerCase();
+      wordFrequencies.set(lowerWord, (wordFrequencies.get(lowerWord) || 0) + 1);
 
-      if (!wordToFiles.has(word)) {
-        wordToFiles.set(word, new Set());
+      if (!wordToFiles.has(lowerWord)) {
+        wordToFiles.set(lowerWord, new Set());
       }
-      wordToFiles.get(word).add(name);
+      wordToFiles.get(lowerWord).add(name);
     });
   });
 
