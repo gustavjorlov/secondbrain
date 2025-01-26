@@ -69,11 +69,38 @@ function Overview() {
               );
             })}
         </ul>
-        <Search
-          selectedWord={selectedWord}
-          onWordSelect={handleWordSelect}
-          onClear={() => handleWordSelect(null)}
-        />
+        <div className="flex flex-col gap-8">
+          <Search
+            selectedWord={selectedWord}
+            onWordSelect={handleWordSelect}
+            onClear={() => handleWordSelect(null)}
+          />
+          <div>
+            <h2 className="text-2xl font-semibold mb-4">Links from Posts</h2>
+            <ul className="space-y-2">
+              {Array.from(
+                new Set(
+                  contentList
+                    .flatMap((file) => file.links || [])
+                    .map((link) => JSON.stringify(link))
+                )
+              )
+                .map((linkStr) => JSON.parse(linkStr))
+                .map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover-glow"
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   );

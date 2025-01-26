@@ -1,54 +1,152 @@
 [
   {
+    "name": "25-01-20_ai-coding",
+    "title": "Ai Coding",
+    "links": [
+      {
+        "text": "Best AI Coding Tools for Developers in 2025",
+        "url": "https://www.builder.io/blog/best-ai-coding-tools"
+      }
+    ]
+  },
+  {
     "name": "25-01-09_api-guidelines",
-    "title": "Api Guidelines"
+    "title": "Api Guidelines",
+    "links": [
+      {
+        "text": "Zalando RESTful API and Event Guidelines",
+        "url": "https://opensource.zalando.com/restful-api-guidelines"
+      }
+    ]
   },
   {
     "name": "25-01-18_bash",
-    "title": "Bash"
+    "title": "Bash",
+    "links": [
+      {
+        "text": "google bash style guide",
+        "url": "https://google.github.io/styleguide/shellguide.html"
+      },
+      {
+        "text": "youtube video",
+        "url": "https://youtu.be/Y_erZnIhgKg?si=C118qk5jhB8V6kjM"
+      }
+    ]
+  },
+  {
+    "name": "25-01-22_elons-five-steps",
+    "title": "Elons Five Steps",
+    "links": []
   },
   {
     "name": "25-01-08_getting-started",
-    "title": "Getting Started"
+    "title": "Getting Started",
+    "links": [
+      {
+        "text": "Links",
+        "url": "https://example.com"
+      }
+    ]
   },
   {
     "name": "25-01-16_graphql-federation",
-    "title": "Graphql Federation"
+    "title": "Graphql Federation",
+    "links": [
+      {
+        "text": "Voyage 1 - youtube",
+        "url": "https://youtu.be/DGAkGULuwEI?si=00G6yj9ET8waWHjE"
+      },
+      {
+        "text": "10 Best Practices for Schema Stewardship (Part 1 of 2)",
+        "url": "https://www.apollographql.com/blog/10-best-practices-for-schema-stewardship"
+      }
+    ]
   },
   {
     "name": "25-01-15_local-pipelines",
-    "title": "Local Pipelines"
+    "title": "Local Pipelines",
+    "links": [
+      {
+        "text": "gitlab-ci-local",
+        "url": "https://github.com/firecow/gitlab-ci-local"
+      },
+      {
+        "text": "ACT",
+        "url": "https://github.com/nektos/act"
+      }
+    ]
   },
   {
     "name": "25-01-20_quotes",
-    "title": "Quotes"
+    "title": "Quotes",
+    "links": []
   },
   {
     "name": "25-01-09_react-hook-form",
-    "title": "React Hook Form"
+    "title": "React Hook Form",
+    "links": [
+      {
+        "text": "react-hook-form",
+        "url": "https://react-hook-form.com/"
+      },
+      {
+        "text": "official documentation",
+        "url": "https://react-hook-form.com/"
+      }
+    ]
   },
   {
     "name": "25-01-07_second-brain",
-    "title": "Second Brain"
+    "title": "Second Brain",
+    "links": [
+      {
+        "text": "inspiration from NetworkChuck",
+        "url": "https://youtu.be/dnE7c0ELEH8?si=XmOo_bNxNvMM425B"
+      }
+    ]
   },
   {
     "name": "25-01-13_software-methodology",
-    "title": "Software Methodology"
+    "title": "Software Methodology",
+    "links": [
+      {
+        "text": "The Over Engineering Pendulum",
+        "url": "https://threedots.tech/post/the-over-engineering-pendulum/?ref=dailydev"
+      },
+      {
+        "text": "Break Stuff on Purpose",
+        "url": "https://slack.engineering/break-stuff-on-purpose/"
+      }
+    ]
   },
   {
     "name": "25-01-10_terminal-commands",
-    "title": "Terminal Commands"
+    "title": "Terminal Commands",
+    "links": []
   },
   {
     "name": "25-01-19_terminal-tips",
-    "title": "Terminal Tips"
+    "title": "Terminal Tips",
+    "links": [
+      {
+        "text": "5 Terminal Hacks",
+        "url": "https://youtu.be/mvWYdrn7m2c?si=yJuckeXD8pprPs3-"
+      }
+    ]
   },
   {
     "name": "25-01-11_test-containers",
-    "title": "Test Containers"
+    "title": "Test Containers",
+    "links": [
+      {
+        "text": "test containers",
+        "url": "https://youtu.be/sNg0bnMF_qY?si=mBPhKvjguhp01gZI"
+      }
+    ]
   },
   {
-    "name": "25-01-08_why-second-brain",
-    "title": "Why Second Brain"
+    "name": "25-01-23_write-a-book",
+    "title": "Write A Book",
+    "links": []
   }
 ]
