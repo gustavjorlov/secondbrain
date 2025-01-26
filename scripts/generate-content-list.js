@@ -2,6 +2,10 @@ import fs from 'fs/promises';
 import path from 'path';
 import process from 'process';
 
+function countWords(content) {
+  return content.split(/\s+/).filter(word => word.length > 0).length;
+}
+
 async function extractLinks(content) {
   // Match markdown links: [text](url)
   const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -40,7 +44,8 @@ async function generateContentList() {
             const content = await fs.readFile(path.join(contentDir, file), 'utf-8');
             const links = await extractLinks(content);
             
-            return { name, title, links };
+            const wordCount = countWords(content);
+            return { name, title, links, wordCount };
           })
       )
     ).sort((a, b) => a.title.localeCompare(b.title));

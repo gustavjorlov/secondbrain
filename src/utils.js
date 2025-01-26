@@ -41,3 +41,9 @@ export const formatTitleFromFilename = (filename) => {
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 };
+
+export const calculateReadingTime = (wordCount) => {
+  const wordsPerMinute = 100;
+  const minutes = Math.ceil(wordCount / wordsPerMinute);
+  return minutes === 1 ? '1 minute' : `${minutes} minutes`;
+};

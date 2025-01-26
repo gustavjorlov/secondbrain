@@ -2,11 +2,13 @@
 import { useState, useEffect, Suspense } from "react";
 import { useParams, Link } from "react-router-dom";
 import searchIndex from "../content/search-index.json";
+import contentList from "../content/content-list.json";
 import {
   parseDateFromFilename,
   formatDate,
   setDocumentTitle,
   formatTitleFromFilename,
+  calculateReadingTime,
 } from "../utils";
 
 function Details() {
@@ -15,9 +17,14 @@ function Details() {
   const [date, setDate] = useState(null);
   const [error, setError] = useState(null);
   const [tags, setTags] = useState([]);
+  const [metadata, setMetadata] = useState(null);
 
   useEffect(() => {
     setDate(parseDateFromFilename(filename));
+    
+    // Get content metadata including word count
+    const fileMetadata = contentList.find(item => item.name === filename);
+    setMetadata(fileMetadata);
     
     // Extract tags for this file from search index
     const matchedTags = Object.entries(searchIndex)
@@ -64,11 +71,12 @@ function Details() {
               ← Back to Overview
             </Link>
             <div className="flex items-center gap-4">
-              {date && (
-                <span className="text-gray-600 dark:text-gray-400 text-sm">
-                  {formatDate(date)}
-                </span>
-              )}
+              <div className="text-gray-600 dark:text-gray-400 text-sm">
+                {date && <span>{formatDate(date)}</span>}
+                {metadata && (
+                  <span className="ml-3">· {calculateReadingTime(metadata.wordCount)} read</span>
+                )}
+              </div>
               <a
                 href={`https://github.com/gustavjorlov/secondbrain/blob/main/src/content/${filename}.mdx`}
                 target="_blank"

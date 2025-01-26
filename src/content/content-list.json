@@ -7,7 +7,8 @@
         "text": "Article: Best AI Coding Tools for Developers in 2025",
         "url": "https://www.builder.io/blog/best-ai-coding-tools"
       }
-    ]
+    ],
+    "wordCount": 12
   },
   {
     "name": "25-01-09_api-guidelines",
@@ -17,7 +18,8 @@
         "text": "Docs: Zalando RESTful API and Event Guidelines",
         "url": "https://opensource.zalando.com/restful-api-guidelines"
       }
-    ]
+    ],
+    "wordCount": 10
   },
   {
     "name": "25-01-18_bash",
@@ -31,12 +33,14 @@
         "text": "Video: Google's bash style guide",
         "url": "https://youtu.be/Y_erZnIhgKg?si=C118qk5jhB8V6kjM"
       }
-    ]
+    ],
+    "wordCount": 12
   },
   {
     "name": "25-01-22_elons-five-steps",
     "title": "Elons Five Steps",
-    "links": []
+    "links": [],
+    "wordCount": 353
   },
   {
     "name": "25-01-16_graphql-federation",
@@ -50,7 +54,8 @@
         "text": "Article: 10 Best Practices for Schema Stewardship (Part 1 of 2)",
         "url": "https://www.apollographql.com/blog/10-best-practices-for-schema-stewardship"
       }
-    ]
+    ],
+    "wordCount": 1384
   },
   {
     "name": "25-01-15_local-pipelines",
@@ -64,12 +69,14 @@
         "text": "Docs: ACT, GitHub Actions Local pipelines",
         "url": "https://github.com/nektos/act"
       }
-    ]
+    ],
+    "wordCount": 138
   },
   {
     "name": "25-01-20_quotes",
     "title": "Quotes",
-    "links": []
+    "links": [],
+    "wordCount": 31
   },
   {
     "name": "25-01-09_react-hook-form",
@@ -83,7 +90,8 @@
         "text": "Docs: react-hook-form official documentation",
         "url": "https://react-hook-form.com/"
       }
-    ]
+    ],
+    "wordCount": 496
   },
   {
     "name": "25-01-26_remix",
@@ -93,7 +101,8 @@
         "text": "Video: Vanilla React | Ryan Florence",
         "url": "https://www.youtube.com/watch?v=ZcwA0xt8FlQ"
       }
-    ]
+    ],
+    "wordCount": 8
   },
   {
     "name": "25-01-07_second-brain",
@@ -103,7 +112,8 @@
         "text": "Video: inspiration from NetworkChuck",
         "url": "https://youtu.be/dnE7c0ELEH8?si=XmOo_bNxNvMM425B"
       }
-    ]
+    ],
+    "wordCount": 33
   },
   {
     "name": "25-01-13_software-methodology",
@@ -117,12 +127,14 @@
         "text": "Article: Break Stuff on Purpose",
         "url": "https://slack.engineering/break-stuff-on-purpose/"
       }
-    ]
+    ],
+    "wordCount": 26
   },
   {
     "name": "25-01-10_terminal-commands",
     "title": "Terminal Commands",
-    "links": []
+    "links": [],
+    "wordCount": 12
   },
   {
     "name": "25-01-19_terminal-tips",
@@ -132,7 +144,8 @@
         "text": "Video: 5 Terminal Hacks",
         "url": "https://youtu.be/mvWYdrn7m2c?si=yJuckeXD8pprPs3-"
       }
-    ]
+    ],
+    "wordCount": 17
   },
   {
     "name": "25-01-11_test-containers",
@@ -142,11 +155,13 @@
         "text": "Video: Test Containers",
         "url": "https://youtu.be/sNg0bnMF_qY?si=mBPhKvjguhp01gZI"
       }
-    ]
+    ],
+    "wordCount": 6
   },
   {
     "name": "25-01-23_write-a-book",
     "title": "Write A Book",
-    "links": []
+    "links": [],
+    "wordCount": 21
   }
 ]
