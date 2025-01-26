@@ -35,6 +35,16 @@ function Overview() {
       <hr className="mb-8" />
       <div className="text-gray-800 dark:text-gray-200 flex flex-col lg:flex-row lg:gap-8">
         <ul className="space-y-2 lg:flex-1 order-first lg:order-none mb-10">
+          <li className="mb-4">
+            <a
+              href="https://github.com/gustavjorlov/secondbrain/new/main/src/content"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 text-sm hover:underline"
+            >
+              + Create new
+            </a>
+          </li>
           {filteredFiles
             .sort((a, b) => (a.name < b.name ? 1 : -1))
             .map((file) => {
