@@ -53,7 +53,7 @@ function Overview() {
                 <li key={file.name}>
                   <Link
                     to={`/${file.name}`}
-                    className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
+                    className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover-glow"
                     viewTransition
                   >
                     {date &&

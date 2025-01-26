@@ -14,3 +14,37 @@ body {
   min-height: 100vh;
   background-color: #f8f9fa;
 }
+
+@keyframes pulse-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.hover-glow:hover {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+@media (prefers-color-scheme: dark) {
+  @keyframes pulse-glow-dark {
+    0% {
+      text-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 15px rgba(96, 165, 250, 0.8);
+    }
+    100% {
+      text-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
+    }
+  }
+
+  .hover-glow:hover {
+    animation: pulse-glow-dark 1.5s ease-in-out infinite;
+  }
+}
