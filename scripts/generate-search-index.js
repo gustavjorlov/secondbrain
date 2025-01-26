@@ -1531,6 +1531,27 @@ const technicalWords = new Set([
 // Common non-technical words to filter out
 const commonStopwords = new Set([
   // Common verbs and adjectives
+  "used",
+  "register",
+  "key",
+  "run",
+  "less",
+  "create",
+  "not",
+  "doesn",
+  "simple",
+  "software",
+  "tools",
+  "tool",
+  "instead",
+  "set",
+  "allows",
+  "add",
+  "use",
+  "using",
+  "video",
+  "article",
+  "docs",
   "make",
   "made",
   "making",
@@ -1718,10 +1739,12 @@ function getWordFrequencies(files) {
         .map((word) => word.toLowerCase())
         .filter((word) => isSignificantWord(word))
     );
-
     uniqueWords.forEach((word) => {
       const lowerWord = word.toLowerCase();
       wordFrequencies.set(lowerWord, (wordFrequencies.get(lowerWord) || 0) + 1);
+      if (lowerWord === "react") {
+        console.log("react", wordFrequencies.get(lowerWord));
+      }
 
       if (!wordToFiles.has(lowerWord)) {
         wordToFiles.set(lowerWord, new Set());
@@ -1741,7 +1764,7 @@ async function generateSearchIndex() {
     // Get top 25 words by frequency
     const topWords = Array.from(wordFrequencies.entries())
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 25)
+      .slice(0, 100)
       .map(([word]) => word);
 
     // Create the final index
