@@ -84,8 +84,8 @@ function Details() {
         Second Brain
       </h1>
       <hr className="mb-8" />
-      <div className="text-gray-800 dark:text-gray-200">
-        <div>
+      <div className="text-gray-800 dark:text-gray-200 flex flex-col lg:flex-row lg:gap-8">
+        <div className="lg:flex-1">
           <div className="flex justify-between items-center">
             <Link
               to="/"
@@ -125,26 +125,26 @@ function Details() {
             </Suspense>
           </div>
         </div>
-      </div>
-      {tags.length > 0 && (
-        <div className="mt-12">
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
-            Post Topics
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <Link
-                key={tag}
-                to={`/?topic=${tag}`}
-                className="px-3 py-1 rounded-full text-sm transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-              >
-                {tag}
-                <span className="ml-1 text-xs">({searchIndex[tag].length})</span>
-              </Link>
-            ))}
+        {tags.length > 0 && (
+          <div className="lg:w-64">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+              Post Topics
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <Link
+                  key={tag}
+                  to={`/?topic=${tag}`}
+                  className="px-3 py-1 rounded-full text-sm transition-colors bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+                >
+                  {tag}
+                  <span className="ml-1 text-xs">({searchIndex[tag].length})</span>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </>
   );
 }
