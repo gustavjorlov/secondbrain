@@ -26,23 +26,20 @@ function Search({ onWordSelect, selectedWord, onClear }) {
       </div>
       <div className="grid grid-cols-1">
         <div className="flex flex-wrap gap-2 mb-2 transition-all duration-500 ease-in-out">
-          {displayedWords.map((word, index) => (
-          <button
-            key={word}
-            onClick={() => onWordSelect(word)}
-            // style={{
-            //   animationDelay: `${Math.min(index * 30, 750)}ms`
-            // }}
-            className={`px-3 py-1 rounded-full text-sm transition-colors text-left animate-fadeSlideIn opacity-0 ${
-              selectedWord === word
-                ? "bg-blue-600 text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
-            }`}
-          >
-            {word}
-            <span className="ml-1 text-xs">({searchIndex[word].length})</span>
-          </button>
-        ))}
+          {displayedWords.map((word) => (
+            <button
+              key={word}
+              onClick={() => onWordSelect(word)}
+              className={`px-3 py-1 rounded-full text-sm transition-colors text-left animate-fadeSlideIn opacity-0 ${
+                selectedWord === word
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
+              }`}
+            >
+              {word}
+              <span className="ml-1 text-xs">({searchIndex[word].length})</span>
+            </button>
+          ))}
         </div>
       </div>
       {!showAll && allWords.length > 25 && (
