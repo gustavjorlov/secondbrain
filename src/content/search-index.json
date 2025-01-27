@@ -1,8 +1,29 @@
 {
+  "test": [
+    "25-01-16_graphql-federation",
+    "25-01-15_local-pipelines",
+    "25-01-11_test-containers",
+    "25-01-27_test-strategies"
+  ],
   "developers": [
     "25-01-20_ai-coding",
     "25-01-22_elons-five-steps",
     "25-01-16_graphql-federation"
+  ],
+  "api": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-09_api-guidelines",
+    "25-01-16_graphql-federation"
+  ],
+  "graphql": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-16_graphql-federation",
+    "25-01-27_test-strategies"
+  ],
+  "team": [
+    "25-01-22_elons-five-steps",
+    "25-01-16_graphql-federation",
+    "25-01-13_software-methodology"
   ],
   "pipelines": [
     "25-01-22_elons-five-steps",
@@ -19,24 +40,58 @@
     "25-01-16_graphql-federation",
     "25-01-15_local-pipelines"
   ],
-  "test": [
+  "design": [
+    "25-01-16_graphql-federation",
+    "25-01-20_quotes",
+    "25-01-23_write-a-book"
+  ],
+  "environment": [
     "25-01-16_graphql-federation",
     "25-01-15_local-pipelines",
-    "25-01-11_test-containers"
+    "25-01-13_software-methodology"
   ],
   "install": [
     "25-01-16_graphql-federation",
     "25-01-15_local-pipelines",
     "25-01-09_react-hook-form"
   ],
+  "npm": [
+    "25-01-16_graphql-federation",
+    "25-01-09_react-hook-form",
+    "25-01-27_test-strategies"
+  ],
   "terminal": [
     "25-01-15_local-pipelines",
     "25-01-10_terminal-commands",
     "25-01-19_terminal-tips"
   ],
-  "api": [
-    "25-01-09_api-guidelines",
+  "gateway": [
+    "25-01-27_api-gateway-vs-federated-graphql",
     "25-01-16_graphql-federation"
+  ],
+  "federated": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-16_graphql-federation"
+  ],
+  "rate": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-16_graphql-federation"
+  ],
+  "limiting": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-16_graphql-federation"
+  ],
+  "type": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-16_graphql-federation"
+  ],
+  "safety": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-13_software-methodology"
+  ],
+  "load": [
+    "25-01-27_api-gateway-vs-federated-graphql",
+    "25-01-15_local-pipelines"
   ],
   "requirements": [
     "25-01-22_elons-five-steps",
@@ -65,10 +120,6 @@
   "problem": [
     "25-01-22_elons-five-steps",
     "25-01-20_quotes"
-  ],
-  "team": [
-    "25-01-22_elons-five-steps",
-    "25-01-16_graphql-federation"
   ],
   "building": [
     "25-01-22_elons-five-steps",
@@ -106,9 +157,17 @@
     "25-01-22_elons-five-steps",
     "25-01-16_graphql-federation"
   ],
+  "continuous": [
+    "25-01-22_elons-five-steps",
+    "25-01-13_software-methodology"
+  ],
   "practices": [
     "25-01-22_elons-five-steps",
     "25-01-16_graphql-federation"
+  ],
+  "testing": [
+    "25-01-22_elons-five-steps",
+    "25-01-27_test-strategies"
   ],
   "enabling": [
     "25-01-22_elons-five-steps",
@@ -146,9 +205,9 @@
     "25-01-16_graphql-federation",
     "25-01-09_react-hook-form"
   ],
-  "design": [
+  "strategies": [
     "25-01-16_graphql-federation",
-    "25-01-23_write-a-book"
+    "25-01-27_test-strategies"
   ],
   "fields": [
     "25-01-16_graphql-federation",
@@ -174,9 +233,9 @@
     "25-01-16_graphql-federation",
     "25-01-15_local-pipelines"
   ],
-  "environment": [
+  "fostering": [
     "25-01-16_graphql-federation",
-    "25-01-15_local-pipelines"
+    "25-01-13_software-methodology"
   ],
   "custom": [
     "25-01-16_graphql-federation",
@@ -198,15 +257,15 @@
     "25-01-16_graphql-federation",
     "25-01-09_react-hook-form"
   ],
+  "teams": [
+    "25-01-16_graphql-federation",
+    "25-01-13_software-methodology"
+  ],
   "useful": [
     "25-01-16_graphql-federation",
     "25-01-10_terminal-commands"
   ],
   "dynamic": [
-    "25-01-16_graphql-federation",
-    "25-01-09_react-hook-form"
-  ],
-  "npm": [
     "25-01-16_graphql-federation",
     "25-01-09_react-hook-form"
   ],
@@ -222,6 +281,14 @@
     "25-01-15_local-pipelines",
     "25-01-09_react-hook-form"
   ],
+  "staff": [
+    "25-01-20_quotes",
+    "25-01-27_staff-engineer"
+  ],
+  "engineer": [
+    "25-01-20_quotes",
+    "25-01-27_staff-engineer"
+  ],
   "react": [
     "25-01-09_react-hook-form",
     "25-01-26_remix"
@@ -230,8 +297,31 @@
     "25-01-09_react-hook-form",
     "25-01-07_second-brain"
   ],
+  "technical": [
+    "25-01-13_software-methodology",
+    "25-01-27_staff-engineer"
+  ],
+  "leadership": [
+    "25-01-13_software-methodology",
+    "25-01-27_staff-engineer"
+  ],
   "coding": [
     "25-01-20_ai-coding"
+  ],
+  "throttling": [
+    "25-01-27_api-gateway-vs-federated-graphql"
+  ],
+  "openapi": [
+    "25-01-27_api-gateway-vs-federated-graphql"
+  ],
+  "spec": [
+    "25-01-27_api-gateway-vs-federated-graphql"
+  ],
+  "secrets": [
+    "25-01-27_api-gateway-vs-federated-graphql"
+  ],
+  "balancing": [
+    "25-01-27_api-gateway-vs-federated-graphql"
   ],
   "guidelines": [
     "25-01-09_api-guidelines"
@@ -294,72 +384,6 @@
     "25-01-22_elons-five-steps"
   ],
   "product": [
-    "25-01-22_elons-five-steps"
-  ],
-  "operational": [
-    "25-01-22_elons-five-steps"
-  ],
-  "efficiency": [
-    "25-01-22_elons-five-steps"
-  ],
-  "implemented": [
-    "25-01-22_elons-five-steps"
-  ],
-  "critically": [
-    "25-01-22_elons-five-steps"
-  ],
-  "evaluate": [
-    "25-01-22_elons-five-steps"
-  ],
-  "features": [
-    "25-01-22_elons-five-steps"
-  ],
-  "stories": [
-    "25-01-22_elons-five-steps"
-  ],
-  "project": [
-    "25-01-22_elons-five-steps"
-  ],
-  "ask": [
-    "25-01-22_elons-five-steps"
-  ],
-  "feature": [
-    "25-01-22_elons-five-steps"
-  ],
-  "solve": [
-    "25-01-22_elons-five-steps"
-  ],
-  "real": [
-    "25-01-22_elons-five-steps"
-  ],
-  "simplified": [
-    "25-01-22_elons-five-steps"
-  ],
-  "omitted": [
-    "25-01-22_elons-five-steps"
-  ],
-  "mobile": [
-    "25-01-22_elons-five-steps"
-  ],
-  "app": [
-    "25-01-22_elons-five-steps"
-  ],
-  "realizes": [
-    "25-01-22_elons-five-steps"
-  ],
-  "planning": [
-    "25-01-22_elons-five-steps"
-  ],
-  "social": [
-    "25-01-22_elons-five-steps"
-  ],
-  "sharing": [
-    "25-01-22_elons-five-steps"
-  ],
-  "competitors": [
-    "25-01-22_elons-five-steps"
-  ],
-  "scrutiny": [
     "25-01-22_elons-five-steps"
   ]
 }

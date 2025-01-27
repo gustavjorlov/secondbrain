@@ -85,7 +85,7 @@ function Details() {
       </h1>
       <hr className="mb-8" />
       <div className="text-gray-800 dark:text-gray-200 flex flex-col lg:flex-row lg:gap-8">
-        <div className="lg:flex-1">
+        <div className="lg:flex-1 mb-8">
           <div className="flex justify-between items-center">
             <Link
               to="/"

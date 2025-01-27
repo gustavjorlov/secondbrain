@@ -75,8 +75,8 @@ function Overview() {
             onWordSelect={handleWordSelect}
             onClear={() => handleWordSelect(null)}
           />
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Links from Posts</h2>
+          <div className="max-w-96">
+            <h2 className="text-xl font-semibold mb-4">Links from Posts</h2>
             <ul className="space-y-2">
               {Array.from(
                 new Set(

@@ -11,6 +11,12 @@
     "wordCount": 12
   },
   {
+    "name": "25-01-27_api-gateway-vs-federated-graphql",
+    "title": "Api Gateway Vs Federated Graphql",
+    "links": [],
+    "wordCount": 21
+  },
+  {
     "name": "25-01-09_api-guidelines",
     "title": "Api Guidelines",
     "links": [
@@ -76,7 +82,7 @@
     "name": "25-01-20_quotes",
     "title": "Quotes",
     "links": [],
-    "wordCount": 31
+    "wordCount": 59
   },
   {
     "name": "25-01-09_react-hook-form",
@@ -126,9 +132,24 @@
       {
         "text": "Article: Break Stuff on Purpose",
         "url": "https://slack.engineering/break-stuff-on-purpose/"
+      },
+      {
+        "text": "Article: Why do some engineering teams consistently outperform others?",
+        "url": "https://newsletter.techworld-with-milan.com/p/why-do-some-engineering-teams-consistently"
       }
     ],
-    "wordCount": 26
+    "wordCount": 80
+  },
+  {
+    "name": "25-01-27_staff-engineer",
+    "title": "Staff Engineer",
+    "links": [
+      {
+        "text": "Video: Technical Leadership and Glue Work",
+        "url": "https://youtu.be/KClAPipnKqw?si=lLX-2Yjg6dlPGfdA"
+      }
+    ],
+    "wordCount": 9
   },
   {
     "name": "25-01-10_terminal-commands",
@@ -157,6 +178,21 @@
       }
     ],
     "wordCount": 6
+  },
+  {
+    "name": "25-01-27_test-strategies",
+    "title": "Test Strategies",
+    "links": [
+      {
+        "text": "Article: We need to talk about testing",
+        "url": "https://dannorth.net/we-need-to-talk-about-testing/"
+      },
+      {
+        "text": "Docs: GraphQL Tools Mocking",
+        "url": "https://the-guild.dev/graphql/tools/docs/mocking"
+      }
+    ],
+    "wordCount": 21
   },
   {
     "name": "25-01-23_write-a-book",
