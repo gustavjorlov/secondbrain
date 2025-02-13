@@ -1,0 +1,110 @@
+# component library
+
+For your setup, here’s a solid approach:
+
+1. Project Structure
+```
+/component-library
+  ├── src/
+  │   ├── components/
+  │   │   ├── Button.tsx
+  │   │   ├── TextField.tsx
+  │   │   └── index.ts
+  │   ├── hooks/
+  │   ├── utils/
+  │   ├── index.ts
+  ├── .gitignore
+  ├── package.json
+  ├── tsconfig.json
+  ├── tsup.config.ts
+  ├── rollup.config.js (optional)
+  ├── README.md
+```
+
+2. TypeScript Configuration (tsconfig.json)
+
+Since you’re not transpiling, configure TypeScript to output modern ES modules:
+```
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["src"]
+}
+```
+
+This setup ensures:
+	•	No transpilation, only type declarations (.d.ts).
+	•	Consumers handle their own compilation (e.g., Next.js, Vite, Webpack).
+	•	JSX compiles to react-jsx (for React 17+).
+
+3. Package Configuration (package.json)
+```
+{
+  "name": "@your-org/component-library",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm publish --access restricted"
+  },
+  "dependencies": {
+    "@react-aria/button": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
+```
+
+This ensures:
+	•	The library is published as an ES module.
+	•	Type definitions are available for consumers.
+
+4. Publishing
+	1.	Login to your private registry (e.g., npm, Verdaccio, GitHub Packages)
+
+npm login --registry=https://your-private-registry/
+
+
+	2.	Build the library
+
+npm run build
+
+
+	3.	Publish
+
+npm publish
+
+
+
+5. Consuming in Web Apps
+
+Your applications can install the library via:
+
+npm install @your-org/component-library
+
+And use it:
+
+import { Button } from "@your-org/component-library";
+
+Would you like a CI/CD pipeline to automate versioning and publishing?
