@@ -43,9 +43,9 @@ Since you’re not transpiling, configure TypeScript to output modern ES modules
 ```
 
 This setup ensures:
-	•	No transpilation, only type declarations (.d.ts).
-	•	Consumers handle their own compilation (e.g., Next.js, Vite, Webpack).
-	•	JSX compiles to react-jsx (for React 17+).
+- No transpilation, only type declarations (.d.ts).
+- Consumers handle their own compilation (e.g., Next.js, Vite, Webpack).
+- JSX compiles to react-jsx (for React 17+).
 
 3. Package Configuration (package.json)
 ```
@@ -77,23 +77,22 @@ This setup ensures:
 ```
 
 This ensures:
-	•	The library is published as an ES module.
-	•	Type definitions are available for consumers.
+- The library is published as an ES module.
+- Type definitions are available for consumers.
 
 4. Publishing
-	1.	Login to your private registry (e.g., npm, Verdaccio, GitHub Packages)
+	
+1.	Login to your private registry (e.g., npm, Verdaccio, GitHub Packages)
 
-npm login --registry=https://your-private-registry/
+`npm login --registry=https://your-private-registry/`
 
+2.	Build the library
 
-	2.	Build the library
+`npm run build`
 
-npm run build
+3.	Publish
 
-
-	3.	Publish
-
-npm publish
+`npm publish`
 
 
 
@@ -101,10 +100,8 @@ npm publish
 
 Your applications can install the library via:
 
-npm install @your-org/component-library
+`npm install @your-org/component-library`
 
 And use it:
 
-import { Button } from "@your-org/component-library";
-
-Would you like a CI/CD pipeline to automate versioning and publishing?
+`import { Button } from "@your-org/component-library";`
